@@ -4,7 +4,13 @@ using UnityEngine;
 
 interface IControllable
 {
-    void youveBeenTouched();
     void youveBeenTapped();
-    void moveTo(Vector3 destination);
+    void youveBeenLongTapped();
+    void moveTo(Vector3 inputDestination, RaycastHit otherSurface, float starting_distance_to_selected_object);
+    void youveBeenSelected();
+    void youveBeenUnselected();
+    void scaleBy(float distance, float scaleSpeed);
+    void rotateBy(Quaternion rotation);
+    void moveToAccel(Vector3 dir);
+    void rotateByGyro(Quaternion rot);
 }
