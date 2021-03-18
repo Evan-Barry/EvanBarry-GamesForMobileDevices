@@ -1032,7 +1032,7 @@ GameObject:
   - component: {fileID: 1175663463}
   - component: {fileID: 1175663462}
   - component: {fileID: 1175663461}
-  - component: {fileID: 1175663465}
+  - component: {fileID: 1175663466}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -1117,7 +1117,7 @@ Transform:
   m_Father: {fileID: 773974216}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1175663465
+--- !u!114 &1175663466
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1126,9 +1126,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1175663460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: daee40cb85ace664e9c8ef6f834c65f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 7196e8eef8633b3488fdbf1307fabcaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  drag_position: {x: 0, y: 0, z: 0}
+  moveValue: 0
 --- !u!1 &1369559599
 GameObject:
   m_ObjectHideFlags: 0

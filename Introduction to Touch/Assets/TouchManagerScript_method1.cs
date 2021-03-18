@@ -254,7 +254,7 @@ public class TouchManagerScript_method1 : MonoBehaviour
                     {
                         Debug.Log("drag camera");
                         //Camera.main.transform.rotation = Quaternion.Euler(angleY, angleX, 0.0f);
-                        Camera.main.transform.Rotate(-Input.touches[0].deltaPosition.y * cameraRotateSpeed * Time.deltaTime, Input.touches[0].deltaPosition.x * cameraRotateSpeed * Time.deltaTime, 0);
+                        Camera.main.transform.Rotate(Input.touches[0].deltaPosition.y * cameraRotateSpeed * Time.deltaTime, -Input.touches[0].deltaPosition.x * cameraRotateSpeed * Time.deltaTime, 0);
                     }
 
                     break;
@@ -272,17 +272,57 @@ public class TouchManagerScript_method1 : MonoBehaviour
                     {
                         Debug.Log("Scale - Zoom");
 
-                        if(scaleAmount > 1)
+                        if(Camera.main.transform.position.y <= 0)
                         {
-                            Camera.main.transform.position += (scaleAmount*scaleSensitivity) * transform.forward;
+                            Debug.Log("Camera cannot move below floor (y is trying to go below 0)");
+                            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y+0.1f, Camera.main.transform.position.z);
+                        }
+
+                        else if(Camera.main.transform.position.y >= 15)
+                        {
+                            Debug.Log("Camera cannot go too high (y is trying to go above 15)");
+                            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y-0.1f, Camera.main.transform.position.z);
+                        }
+
+                        else if(Camera.main.transform.position.x <= -15)
+                    
+                        {
+                            Debug.Log("Camera cannot move outside bounds of floor (X is trying to go below -15)");
+                            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x+0.1f, Camera.main.transform.position.y, Camera.main.transform.position.z);
+                        }
+
+                        else if(Camera.main.transform.position.x >= 15)
+                        {
+                            Debug.Log("Camera cannot move outside bounds of floor (X is trying to go above 15)");
+                            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x-0.1f, Camera.main.transform.position.y, Camera.main.transform.position.z);
+                        }
+
+                        else if(Camera.main.transform.position.z <= -15)
+                        {
+                            Debug.Log("Camera cannot move outside bounds of floor (Z is trying to go below -15)");
+                            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z+0.1f);
+                        }
+
+                        else if(Camera.main.transform.position.z >= 15)
+                        {
+                            Debug.Log("Camera cannot move outside bounds of floor (Z is trying to go above 15)");
+                            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z-0.1f);
                         }
 
                         else
                         {
-                            Camera.main.transform.position += (-scaleAmount*scaleSensitivity) * transform.forward;
-                        }
+                            if(scaleAmount > 1)
+                            {
+                                //Camera.main.transform.position += (scaleAmount*scaleSensitivity) * transform.forward;
+                                Camera.main.transform.Translate(Vector3.forward * (scaleAmount*scaleSensitivity));
+                            }
 
-                        
+                            else
+                            {
+                                //Camera.main.transform.position += (-scaleAmount*scaleSensitivity) * transform.forward;
+                                Camera.main.transform.Translate(Vector3.forward * (-scaleAmount*scaleSensitivity));
+                            }
+                        }                        
                     }
 
                     break;

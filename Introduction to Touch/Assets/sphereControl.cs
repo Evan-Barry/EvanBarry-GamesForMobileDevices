@@ -74,7 +74,7 @@ public class sphereControl : MonoBehaviour, IControllable
 
     public void rotateBy(Quaternion rotation)
     {
-
+        transform.rotation *= rotation;
     }
 
     public void moveToAccel(Vector3 dir)
