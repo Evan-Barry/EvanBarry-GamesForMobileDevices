@@ -6,8 +6,14 @@ using UnityEngine.Advertisements;
 public class InitializeAdsScript : MonoBehaviour, IUnityAdsListener
 {
 
-    string gameId = "4045807";
-    string mySurfacingId = "Rewarded_iOS";
+    #if UNITY_IOS
+    private string gameId = "4045807";
+    private string mySurfacingId = "Rewarded_iOS";
+    #elif UNITY_ANDROID
+    private string gameId = "4045806";
+    private string mySurfacingId = "Rewarded_Android";
+    #endif
+    //string mySurfacingId = "Rewarded_iOS";
     bool testMode = true;
     bool iAdShown = false;
     bool rAdShown = false;
@@ -64,12 +70,21 @@ public class InitializeAdsScript : MonoBehaviour, IUnityAdsListener
     public void OnUnityAdsDidFinish (string surfacingId, ShowResult showResult) 
     {
         // Define conditional logic for each ad completion status:
-        if (showResult == ShowResult.Finished) {
-            // Reward the user for watching the ad to completion.
-        } else if (showResult == ShowResult.Skipped) {
-            // Do not reward the user for skipping the ad.
-        } else if (showResult == ShowResult.Failed) {
-            Debug.LogWarning ("The ad did not finish due to an error.");
+        if (showResult == ShowResult.Finished && surfacingId == mySurfacingId) 
+        {
+            Debug.Log("You finished the ads! Here is your reward!" + ", surfacing id - " + surfacingId);
+        }
+        else if (showResult == ShowResult.Finished)
+        {
+            Debug.Log("You finished the ad");
+        } 
+        else if (showResult == ShowResult.Skipped) 
+        {
+            Debug.Log("You skipped the ad. No reward for you");
+        } 
+        else if (showResult == ShowResult.Failed) 
+        {
+            Debug.Log("The ad did not finish due to an error.");
         }
     }
 
