@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 351933018f0004140890e87b4383fd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdownTime: 5
 --- !u!4 &137427271
 Transform:
   m_ObjectHideFlags: 0
