@@ -48,6 +48,7 @@ public class InitializeAdsScript : MonoBehaviour, IUnityAdsListener
     private InterstitialAd googleInterstitial;
     private RewardedAd googleRewarded;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -247,6 +248,7 @@ public class InitializeAdsScript : MonoBehaviour, IUnityAdsListener
                 else
                 {
                     Debug.Log("Unity - You finished the ads! Here is your reward!");
+                    GetComponent<gameManager>().setHints(1);
                     startTimer = false;
                 }
             }
@@ -328,8 +330,8 @@ public class InitializeAdsScript : MonoBehaviour, IUnityAdsListener
         string type = args.Type;
         double amount = args.Amount;
         MonoBehaviour.print(
-            "HandleRewardedAdRewarded event received for "
-                        + amount.ToString() + " " + type);
+            "HandleRewardedAdRewarded event received for 1 hint");
+        GetComponent<gameManager>().setHints(1);
     }
 
 }
