@@ -1,0 +1,9 @@
+lastUpgrade=01012
+proj.pluginVersion=0.10.12
+proj.AppId=925394984555
+and.BundleId=com.T00202376.IrishCountyQuiz
+proj.classDir=Assets
+proj.ConstantsClassName=GPGSIds
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--Google+Play+game+services+IDs.+Save+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.--%3e%0d%0a%3cresources%3e%0d%0a++%3c%21--app_id--%3e%0d%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e925394984555%3c%2fstring%3e%0d%0a++%3c%21--package_name--%3e%0d%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.T00202376.IrishCountyQuiz%3c%2fstring%3e%0d%0a++%3c%21--achievement+5+in+a+row--%3e%0d%0a++%3cstring+name%3d%22achievement_5_in_a_row%22+translatable%3d%22false%22%3eCgkI67zbrvcaEAIQAQ%3c%2fstring%3e%0d%0a++%3c%21--achievement+10+in+a+row--%3e%0d%0a++%3cstring+name%3d%22achievement_10_in_a_row%22+translatable%3d%22false%22%3eCgkI67zbrvcaEAIQAg%3c%2fstring%3e%0d%0a++%3c%21--achievement+20+in+a+row--%3e%0d%0a++%3cstring+name%3d%22achievement_20_in_a_row%22+translatable%3d%22false%22%3eCgkI67zbrvcaEAIQAw%3c%2fstring%3e%0d%0a++%3c%21--achievement+32+in+a+row--%3e%0d%0a++%3cstring+name%3d%22achievement_32_in_a_row%22+translatable%3d%22false%22%3eCgkI67zbrvcaEAIQBA%3c%2fstring%3e%0d%0a++%3c%21--achievement+Perfect+Game--%3e%0d%0a++%3cstring+name%3d%22achievement_perfect_game%22+translatable%3d%22false%22%3eCgkI67zbrvcaEAIQBQ%3c%2fstring%3e%0d%0a++%3c%21--leaderboard+High+Score--%3e%0d%0a++%3cstring+name%3d%22leaderboard_high_score%22+translatable%3d%22false%22%3eCgkI67zbrvcaEAIQBg%3c%2fstring%3e%0d%0a%3c%2fresources%3e
+and.ClientId=
+android.SetupDone=true
